@@ -1,5 +1,7 @@
 using System;
+using Chapters;
 using Game;
+using Screens;
 
 namespace Windows
 {
@@ -10,14 +12,25 @@ namespace Windows
     {
         private readonly IGameController _gameController;
         private readonly IWindowManager _windowManager;
+        private readonly IChapterController _chapterController;
+        private readonly IScreenController _screenController;
 
-        public UIController(IGameController gameController, IWindowManager windowManager)
+        public UIController(IGameController gameController,
+                            IWindowManager windowManager,
+                            IChapterController chapterController,
+                            IScreenController screenController)
         {
             _gameController = gameController;
             _windowManager = windowManager;
+            _chapterController = chapterController;
+            _screenController = screenController;
 
             _gameController.OnGameStateChange += OnGameStateChange;
+            _chapterController.OnChapterComplete += ChapterComplete;
+            _screenController.OnScreenLaunch += ScreenLaunch;
         }
+
+        public void OpenWindow(EWindowType windowType) => _windowManager.OpenWindow(windowType);
 
         private void OnGameStateChange(EGameState state)
         {
@@ -28,10 +41,23 @@ namespace Windows
                     break;
             }
         }
+        
+        private void ScreenLaunch(int chapterId, int screenId)
+        {
+            OpenWindow(EWindowType.Screen);
+        }
+
+        private void ChapterComplete(int chapterId)
+        {
+            _windowManager.OpenWindowAndCloseOthers(EWindowType.Main);
+        }
+        
 
         public void Dispose()
         {
             _gameController.OnGameStateChange -= OnGameStateChange;
+            
+            _chapterController.OnChapterLaunch -= ChapterComplete;
         }
     }
 }

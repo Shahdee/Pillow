@@ -45,12 +45,21 @@ namespace Windows
 
         public void OpenWindow(EWindowType windowType)
         {
+            var currentWindow = _stackedWindows.Any()? _stackedWindows.Peek() : null;
+            if (currentWindow != null && currentWindow.WindowType == windowType)
+            {
+                Debug.Log("window " + windowType + " is open");
+                return;
+            }
+            
             var windowToOpen = _allWindows.FirstOrDefault(w => w.WindowType == windowType);
             if (windowToOpen == null)
                 return;
             
             _stackedWindows.Push(windowToOpen);
 
+            var oder = _stackedWindows.Count - 1;
+            windowToOpen.SetOrder(oder);
             windowToOpen.SetParent(_windowParent); // why it happens every time we open it? 
             windowToOpen.Open();
         }

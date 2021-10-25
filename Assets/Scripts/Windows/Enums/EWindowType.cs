@@ -4,6 +4,7 @@ namespace Windows
     {
         Main,
         Story,
-        Workspace,
+        Workspace, // ? 
+        Screen,
     }
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   _mainView: {fileID: 225363280868603214, guid: 1bae4bcdff32b4beda2577eb638ca5f4, type: 3}
   _storyWindowView: {fileID: 3259562189533746872, guid: af672448d19db48d487cd3cc7f593194, type: 3}
   _workspaceWindowView: {fileID: 7852690282098639646, guid: 44bbbf3f0027f462aa73722efaec8f9a, type: 3}
+  _screenWindowView: {fileID: 2206286094495907572, guid: 6dd1ef196a64a4d2ba19f4f3a9d1c10f, type: 3}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9265484063142359a0c86c8165b6334, type: 3}
+  m_Name: ChapterDatabase
+  m_EditorClassIdentifier: 
+  _chapterDatas:
+  - ScreenDatas:
+    - {fileID: 11400000, guid: c42e20da5d4a142f3839c8e5942a2165, type: 2}
+    - {fileID: 11400000, guid: c2f29c336ccd843c19ea5adc6049ccbd, type: 2}
+    - {fileID: 11400000, guid: 31cd7253b255f427583bbc340ec8aac9, type: 2}
+    - {fileID: 11400000, guid: f21a637759e4542a5ace86de39c4965e, type: 2}
+    - {fileID: 11400000, guid: b480fda9df4664c378aae947eab8e250, type: 2}
+    - {fileID: 11400000, guid: 5396dcc81379b4fe69f5522e0e4e00f1, type: 2}
+    - {fileID: 11400000, guid: 12fdbbd4e9d44489d8a8aa21c0e389ff, type: 2}
+    - {fileID: 11400000, guid: ecc9c10712e0d4f1096379672c1b79d2, type: 2}
+  - ScreenDatas:
+    - {fileID: 11400000, guid: 086512f61b9904acc959df113ac14e09, type: 2}

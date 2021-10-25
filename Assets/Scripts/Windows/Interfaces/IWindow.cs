@@ -9,6 +9,7 @@ namespace Windows
         EWindowType WindowType { get; }
         void Open();
         void SetParent(Transform transform);
+        void SetOrder(int order);
         void Close();
     }
 }

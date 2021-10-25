@@ -10,5 +10,7 @@ namespace Windows
         void Open();
 
         void Close();
+
+        void SetOrder(int order);
     }
 }

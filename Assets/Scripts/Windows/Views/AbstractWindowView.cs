@@ -10,5 +10,6 @@ namespace Windows
 
         public void Open() => gameObject.SetActive(true);
         public void Close() => gameObject.SetActive(false);
+        public void SetOrder(int order) => _canvas.sortingOrder = order;
     }
 }
