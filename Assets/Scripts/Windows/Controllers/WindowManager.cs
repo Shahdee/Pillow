@@ -27,7 +27,7 @@ namespace Windows
         public void Init()
         {
             _windowParent = new GameObject().transform;
-            _windowParent.name = "WindowParent";
+            _windowParent.name = "_WindowParent";
 
             foreach (var window in _allWindows)
                 window.OnClose += OnWindowClose;

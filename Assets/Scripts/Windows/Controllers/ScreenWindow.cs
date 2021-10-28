@@ -1,6 +1,7 @@
 using Screens;
 using Zenject;
 using System;
+using Audio;
 
 namespace Windows
 {
@@ -13,10 +14,13 @@ namespace Windows
         public override EWindowType WindowType => EWindowType.Screen;
         
         private readonly LazyInject<ScreenWindowView> _view;
-        
-        public ScreenWindow(LazyInject<ScreenWindowView> view)
+        private readonly IAudioController _audioController;
+
+        public ScreenWindow(LazyInject<ScreenWindowView> view,
+                            IAudioController audioController)
         {
             _view = view;
+            _audioController = audioController;
         }
 
         public void SetScreenData(ScreenData screenData)
@@ -37,6 +41,7 @@ namespace Windows
 
         private void NextScreenClick()
         {
+            _audioController.PlaySound(ESoundType.Tap);
             OnNextScreen?.Invoke();
         }
 

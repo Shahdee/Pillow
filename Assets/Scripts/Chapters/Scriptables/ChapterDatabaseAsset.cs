@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Screens;
-using Targets;
+
 
 namespace Chapters
 {
@@ -11,7 +10,5 @@ namespace Chapters
         public IReadOnlyList<ChapterData> ChapterDatas => _chapterDatas;
         
         [SerializeField] private List<ChapterData> _chapterDatas;
-        
- 
     }
 }

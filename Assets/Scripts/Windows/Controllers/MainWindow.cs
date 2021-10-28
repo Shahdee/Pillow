@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Windows;
+using Audio;
 using Chapters;
 using Zenject;
 
@@ -19,11 +20,15 @@ namespace Windows
     
         private readonly LazyInject<MainWindowView> _view;
         private readonly IChapterController _chapterController;
+        private readonly IAudioController _audioController;
 
-        public MainWindow(LazyInject<MainWindowView> view, IChapterController chapterController)
+        public MainWindow(LazyInject<MainWindowView> view,
+                            IChapterController chapterController,
+                            IAudioController audioController)
         {
             _view = view;
             _chapterController = chapterController;
+            _audioController = audioController;
         }
 
         protected override void OnAssignView() => SetView(_view.Value);
@@ -37,11 +42,15 @@ namespace Windows
         private void StartFirstChapter()
         {
             _chapterController.LaunchChapter(0); // get it from player data 
+            
+            _audioController.PlaySound(ESoundType.Tap);
         }
         
         private void StartSecondChapter()
         {
             _chapterController.LaunchChapter(1); // get it from player data 
+            
+            _audioController.PlaySound(ESoundType.Tap);
         }
 
 
